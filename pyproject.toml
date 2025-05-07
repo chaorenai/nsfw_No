@@ -1,0 +1,87 @@
+[build-system]
+requires = ["setuptools>=70.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nsfw_no"
+version = "1.0.0"
+description = "A custom node to filter or replace NSFW content in ComfyUI workflows."
+authors = [
+  {name = "xiaodu", email = "yinghanzi@gmail.com"}
+]
+readme = "README.md"
+license = {text = "MIT license"}
+classifiers = []
+dependencies = [
+
+]
+
+dependencies = [
+  "transformers>=4.45.0",
+  "torch>=2.7.0",
+  "torchvision>=0.22.0",
+  "pillow>=11.0.0",
+  "numpy>=2.2.0"
+]
+
+[project.optional-dependencies]
+dev = [
+    "bump-my-version",
+    "coverage",  # testing
+    "mypy",  # linting
+    "pre-commit", # runs linting on commit
+    "pytest",  # testing
+    "ruff",  # linting
+]
+
+[project.urls]
+bugs = "https://github.com/chaorenai/nsfw_no/issues"
+homepage = "https://github.com/chaorenai/nsfw_no"
+
+
+[tool.comfy]
+PublisherId = "chaorenai"
+DisplayName = "nsfw_no"
+Icon = ""
+
+[tool.setuptools.package-data]
+"*" = ["*.*"]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+testpaths = [
+    "tests",
+]
+
+[tool.mypy]
+files = "."
+
+# Use strict defaults
+strict = true
+warn_unreachable = true
+warn_no_return = true
+
+[[tool.mypy.overrides]]
+# Don't require test functions to include types
+module = "tests.*"
+allow_untyped_defs = true
+disable_error_code = "attr-defined"
+
+[tool.ruff]
+# extend-exclude = ["static", "ci/templates"]
+line-length = 140
+src = ["src", "tests"]
+target-version = "py39"
+
+# Add rules to ban exec/eval
+[tool.ruff.lint]
+select = [
+    "S102",  # exec-builtin
+    "S307",  # eval-used
+    "W293",
+    "F",  # The "F" series in Ruff stands for "Pyflakes" rules, which catch various Python syntax errors and undefined names.
+    # See all rules here: https://docs.astral.sh/ruff/rules/#pyflakes-f
+]
+
+[tool.ruff.lint.flake8-quotes]
+inline-quotes = "double"
