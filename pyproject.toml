@@ -12,9 +12,6 @@ authors = [
 readme = "README.md"
 license = {text = "MIT license"}
 classifiers = []
-dependencies = [
-
-]
 
 dependencies = [
   "transformers>=4.45.0",
@@ -41,7 +38,7 @@ homepage = "https://github.com/chaorenai/nsfw_no"
 
 
 [tool.comfy]
-PublisherId = "chaorenai"
+PublisherId = "xiaodu"
 DisplayName = "nsfw_no"
 Icon = ""
 
