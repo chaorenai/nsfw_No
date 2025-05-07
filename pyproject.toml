@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "nsfw_no"
-version = "1.0.0"
-description = "A custom node to filter or replace NSFW content in ComfyUI workflows."
+version = "1.0.1"
+description = "A custom ComfyUI node designed to filter or replace NSFW content within workflows, supporting batch operations."
 authors = [
   {name = "xiaodu", email = "yinghanzi@gmail.com"}
 ]
