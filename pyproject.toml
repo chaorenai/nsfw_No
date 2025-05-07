@@ -35,6 +35,7 @@ dev = [
 ]
 
 [project.urls]
+Repository = "https://github.com/chaorenai/nsfw_no" 
 bugs = "https://github.com/chaorenai/nsfw_no/issues"
 homepage = "https://github.com/chaorenai/nsfw_no"
 
